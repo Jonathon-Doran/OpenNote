@@ -408,10 +408,10 @@ def build_tabbar(editor):
     editor.pluginToolbar.setVisible(False)
     editor.addToolBar(Qt.ToolBarArea.TopToolBarArea, editor.pluginToolbar)
 
-    add_widget = build_button(editor, './Assets/icons/svg_question', 'Add Custom Widget', 'Add Custom Widget', False)
-    red_text = build_action(editor, './Assets/icons/svg_question', 'RedTextbox', 'Create Red Textbox', False)
+    add_widget = build_button(editor, './Assets/icons/svg_question', 'Add Custom Widget', 'Add custom widgets by putting files in the PluginWidgets folder', False)
+    red_text = build_action(editor, './Assets/icons/redbox', 'RedTextbox', 'Create Red Textbox', False)
     red_text.triggered.connect(RedTextbox)
-    hello_world = build_action(editor, './Assets/icons/svg_question', 'Hello World', 'create hello world', False)
+    hello_world = build_action(editor, './Assets/icons/world', 'Hello World', 'create hello world', False)
     hello_world.triggered.connect(HelloWorldText)
 
     editor.pluginToolbar.addWidget(add_widget)
@@ -421,7 +421,9 @@ def build_tabbar(editor):
     editor.pluginToolbar.addAction(hello_world)
     # 12/7/2024: managed to code the plugins to appear on the toolbar, but they don't work
     # either this is just how it be or i don't understand python well enough to make them work right
-    # the goal is still to automatically read them in and create buttons on the toolbar
+    # TODO: implement new plugin architecture that allows program to read and create toolbar buttons automatically
+    # TODO: create functional plugins
+
 
     # ---------------------------------------------------------------------------------
 
